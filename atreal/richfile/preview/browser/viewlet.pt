@@ -1,0 +1,34 @@
+<dl class="richfile portlet"
+    tal:condition="view/available"
+    tal:attributes="id view/plugin_id"
+    i18n:domain="atreal.richfile.preview">
+    
+    <dt tal:attributes="id string:${view/plugin_id}Header" class="rfheader portletHeader">
+        <span class="portletTopLeft"></span>
+        <tal:block tal:replace="structure view/controls"/>
+        <span class="title" style="font-weight:bold"
+            i18n:translate="">
+            Preview
+        </span>
+
+        <span class="portletTopRight"></span>
+    </dt>
+    
+    <dd tal:condition="view/active"
+        class="rfbody portletItem odd"
+        tal:attributes="id string:${view/plugin_id}Body;
+                        class string:rfbody portletItem odd ${view/collapsed}">
+        
+        <!--Your specific code here-->        
+	
+	<div>
+	    <IFRAME src="http://perso.wanadoo.fr/bernard.quevillier/toposnew/fondex03.htm"
+		    tal:attributes="src string:${here/absolute_url}/rfpreview"
+		    width="100%" height="400" scrolling="auto" frameborder="1"> </IFRAME>
+	</div>
+	
+        <!--End of specific code-->
+	
+    </dd>
+    
+</dl>

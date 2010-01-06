@@ -1,0 +1,24 @@
+#preview a.viewlet-update:click {
+    evt-click-preventdefault:               true;
+    action-server:                          updateViewletPreview;
+    updateViewletPreview-viewlet:             kssAttr(viewlet, True);
+}
+
+#preview a.viewlet-activate:click {
+    evt-click-preventdefault:               true;
+    action-server:                          activateViewletPreview;
+    activateViewletPreview-viewlet:           kssAttr(viewlet, True);
+}
+
+#preview a.viewlet-unactivate:click {
+    evt-click-preventdefault:               true;
+    action-server:                          unactivateViewletPreview;
+    unactivateViewletPreview-viewlet:         kssAttr(viewlet, True);
+}
+
+
+#preview a.viewlet-refresh:click {
+    evt-click-preventdefault:               true;
+    action-server:                          refreshViewletPreview;
+    refreshViewletPreview-viewlet:            kssAttr(viewlet, True);
+}

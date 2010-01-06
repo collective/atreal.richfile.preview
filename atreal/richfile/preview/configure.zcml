@@ -1,0 +1,44 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="atreal.richfile.preview">
+
+    <five:registerPackage package="." initialize=".initialize" />
+    
+    <include package="atreal.filestorage.common" />
+    <include package="atreal.richfile.qualifier" />
+    
+    <i18n:registerTranslations directory="locales"/>
+
+    <adapter
+        for="atreal.richfile.preview.interfaces.IPreview"
+        factory="atreal.richfile.preview.adapters.ToPreviewableObject"
+        provides="atreal.richfile.preview.interfaces.IPreviewable"
+        />
+
+    <subscriber
+        for="atreal.richfile.preview.interfaces.IPreview
+             atreal.richfile.qualifier.interfaces.IFileQualifiedEvent"
+        handler="atreal.richfile.preview.events.buildAndStorePreview"
+        />
+
+    <subscriber
+        for="atreal.richfile.preview.interfaces.IPreview
+             atreal.richfile.qualifier.interfaces.IMimetypeChangedEvent"
+        handler="atreal.richfile.preview.events.cleanPreviewData"
+        />
+
+    <include package=".browser" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="RichFilePreview"
+        directory="profiles/default"
+        description="Preview Support Plugin for RichFileQualifier"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>

@@ -1,0 +1,82 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="atreal.richfile.preview">
+
+    <browser:resource
+        name="richfilepreview_icon.png"
+        image="richfilepreview_icon.png"
+        layer="atreal.richfile.preview.interfaces.IRichFilePreviewLayer"
+        />
+
+    <adapter factory=".controlpanel.RichFilePreviewControlPanelAdapter" />
+
+    <browser:page
+        name="richfilepreview-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.RichFilePreviewControlPanel"
+        permission="cmf.ManagePortal"
+        layer="atreal.richfile.preview.interfaces.IRichFilePreviewLayer"
+        />
+
+    <browser:viewlet
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="atreal.richfile.preview.viewlet"
+        manager="atreal.richfile.qualifier.interfaces.IRFViewletManager"
+        class=".viewlets.PreviewViewlet"
+        permission="zope2.View"
+        layer="atreal.richfile.preview.interfaces.IRichFilePreviewLayer"
+        />
+
+    <browser:page
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="rfpreview"
+        class=".views.RFPreviewView"
+        permission="zope2.View"
+        template="view.pt"
+        allowed_interface="atreal.richfile.qualifier.interfaces.IRFView"
+        layer="atreal.richfile.preview.interfaces.IRichFilePreviewLayer"
+        />
+
+    <!--KSS entry-->
+
+    <browser:resource
+      name="atreal.richfile.preview.kss"
+      file="preview.kss"
+      layer="atreal.richfile.preview.interfaces.IRichFilePreviewLayer"
+      />
+
+    <browser:page
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="updateViewletPreview"
+        attribute="update"
+        class=".views.RFPreviewView"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:page
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="activateViewletPreview"
+        attribute="active"
+        class=".views.RFPreviewView"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:page
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="unactivateViewletPreview"
+        attribute="unactive"
+        class=".views.RFPreviewView"
+        permission="cmf.ModifyPortalContent"
+        />
+    
+    <browser:page
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="refreshViewletPreview"
+        attribute="refresh"
+        class=".views.RFPreviewView"
+        permission="zope2.View"
+        />
+
+</configure>

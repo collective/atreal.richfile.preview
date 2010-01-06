@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<componentregistry>
+ <adapters/>
+ <utilities>
+  <utility
+     name="atreal.richfile.preview.IRichFilePreviewSite"
+     component="atreal.richfile.preview.interfaces.IRichFilePreviewSite"
+     interface="zope.interface.interfaces.IInterface" />
+ </utilities>
+</componentregistry>
