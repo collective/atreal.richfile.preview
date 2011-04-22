@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.0'
+version = '0.2.0'
 
 setup(name='atreal.richfile.preview',
       version=version,
@@ -15,8 +15,8 @@ setup(name='atreal.richfile.preview',
         ],
       keywords='richfile plone preview atreal',
       author='atReal',
-      author_email='contact@atreal.net',
-      url='http://www.atreal.net/',
+      author_email='contact@atreal.fr',
+      url='http://svn.plone.org/svn/collective/atreal.richfile.preview/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['atreal', 'atreal.richfile'],

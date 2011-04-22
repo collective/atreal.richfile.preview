@@ -1,10 +1,17 @@
 Changelog
 =========
 
+0.2.0 - Unreleased
+------------------
+
+* Change the way to get data from file to work with 'all' files
+  [f10w]
+
+* Cleanup package-structure
+  [f10w]
+
 0.1.0 - 2010-01-06
 ------------------
 
-- Initial release
-[Jean-Nicolas Bes]
-[Matthias Broquet]
-[Florent Michon]
+* Initial release
+  [drjnut, f10w, tiazma]
