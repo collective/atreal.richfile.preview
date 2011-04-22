@@ -39,12 +39,25 @@ class ToPreviewableObject(RFPlugin):
         """
         transforms = getToolByName(self.context, 'portal_transforms')
         file = self.context.getPrimaryField().getAccessor(self.context)()
-        if isinstance(file.data, str):
-            data = file.data
+        # we get data
+        if hasattr(file, 'get_data'):
+            data = file.get_data()
         else:
-            data = file.data.open().read()
-        data = transforms.convertTo('text/html', data, filename=file.filename)
-        
+            # these cases don't have to happen
+            if not hasattr(file, 'data'):
+                data = None
+            else:
+                if isinstance(file.data, str):
+                    data = file.data
+                else:
+                    if hasattr(file.data, 'open'):
+                        data = file.data.open().read()
+                    else:
+                        data = None
+        # we transform the data to html
+        if data is not None:
+            data = transforms.convertTo('text/html', data, filename=file.filename)
+        # no preview so we get out of here
         if data is None:
             self.setSubObject ('preview.html', "")
             return
