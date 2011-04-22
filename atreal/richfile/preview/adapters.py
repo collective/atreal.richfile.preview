@@ -30,7 +30,7 @@ class ToPreviewableObject(RFPlugin):
                 inside = inside[2:]
             if inside in self.sublist:
                 # convert elems that are known images 
-                inside = '%s/rfpreview/%s' % (self.instance.getId(), inside)
+                inside = '++rfpreview++%s' % (inside)
             result = '<img%s src="%s"%s>' % (prefix, inside, postfix)
             return result
 

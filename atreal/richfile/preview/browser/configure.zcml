@@ -79,4 +79,10 @@
         permission="zope2.View"
         />
 
+    <!-- Traverse -->
+    <adapter
+        factory=".views.RFPreviewTraverse"
+        name="rfpreview"
+        />
+
 </configure>

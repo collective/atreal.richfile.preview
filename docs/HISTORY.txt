@@ -4,11 +4,16 @@ Changelog
 0.2.0 - Unreleased
 ------------------
 
+* Plone 4 Compatibility : change the way to get subobject using new traverse
+  adapter in qualifier
+  [f10w]
+
 * Change the way to get data from file to work with 'all' files
   [f10w]
 
 * Cleanup package-structure
   [f10w]
+
 
 0.1.0 - 2010-01-06
 ------------------
