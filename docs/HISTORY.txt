@@ -4,6 +4,9 @@ Changelog
 0.2.0 - Unreleased
 ------------------
 
+* Plone 4 Compatibility : update control panel template
+  [f10w]
+
 * Plone 4 Compatibility : change the way to get subobject using new traverse
   adapter in qualifier
   [f10w]
