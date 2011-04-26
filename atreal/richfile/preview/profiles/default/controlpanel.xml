@@ -4,6 +4,7 @@
  <configlet title="RichFilePreview" action_id="RichFilePreview" appId="RichFilePreview"
     category="Products" condition_expr=""
     url_expr="string:${portal_url}/@@richfilepreview-controlpanel" visible="True"
+    icon_expr="string:${portal_url}/++resource++richfilepreview_icon.png"
     i18n:attributes="title">
   <permission>Manage portal</permission>
  </configlet>
