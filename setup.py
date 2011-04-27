@@ -24,8 +24,8 @@ setup(name='atreal.richfile.preview',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'atreal.richfile.qualifier',
-          'Products.AROfficeTransforms'
+          'atreal.richfile.qualifier>=1.1.0',
+          'Products.AROfficeTransforms>=0.10.0'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
