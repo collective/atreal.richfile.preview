@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
+<!-- Note that the version here will follow the value of setup.py
+     if the new version adds an upgrade step
+ -->
 <metadata>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <dependencies>
     <dependency>profile-atreal.richfile.qualifier:default</dependency>
+    <dependency>profile-Products.AROfficeTransforms:default</dependency>
   </dependencies>
 </metadata>
