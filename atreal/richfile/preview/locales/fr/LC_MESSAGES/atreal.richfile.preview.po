@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-11-30 16:53+0000\n"
+"POT-Creation-Date: 2011-04-27 15:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgid "help_rf_preview_collapsed"
 msgstr "Cochez la case si vous souhaitez que le plugin soit rétracté lors du chargement de la page."
 
 #. Default: "(Required)"
-#: ./browser/controlpanel.pt:167
+#: ./browser/controlpanel.pt:189
 msgid "label_required"
 msgstr "(Requis)"
 
@@ -61,7 +61,7 @@ msgid "label_rf_preview_collapsed"
 msgstr "Affichage rétracté ?"
 
 #. Default: "Required"
-#: ./browser/controlpanel.pt:167
+#: ./browser/controlpanel.pt:189
 msgid "title_required"
 msgstr "Requis"
 

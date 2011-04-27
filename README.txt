@@ -42,6 +42,24 @@ This package requires Products.AROfficeTranforms_ and his dependencies.
 .. _Products.AROfficeTranforms: http://pypi.python.org/pypi/Products.AROfficeTransforms
 
 
+Control Panel
+=============
+
+Few options are avalaible in the Control Panel :
+
+* 'Update all contents': will update all contents of the portal supported by
+  this plugin.
+* 'Clean all datas': will clean datas created by this plugin, for each
+  supported content of the portal.
+
+Important: These operations will take a while, and may slow down the site
+significantly while the content is updated.
+
+Important: These operations search by the interface provided by the content in
+portal_catalog, so if you already have contents in your site when you install
+this package, you have to update 'object_provides' index first.
+
+
 Authors
 =======
 
