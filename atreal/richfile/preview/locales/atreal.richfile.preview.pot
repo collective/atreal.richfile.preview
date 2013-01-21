@@ -65,3 +65,13 @@ msgstr ""
 msgid "title_required"
 msgstr ""
 
+#. Default: "Do you want the plugin's display to be collapsed ?"
+#: ./browser/controlpanel.py:24
+msgid "help_rf_load_preview_collapsed"
+msgstr ""
+
+#. Default: "Load preview when collapsed ?"
+#: ./browser/controlpanel.py:22
+msgid "label_rf_load_preview_collapsed"
+msgstr ""
+

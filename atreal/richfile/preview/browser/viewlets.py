@@ -23,4 +23,17 @@ class PreviewViewlet(RichfileViewlet):
         """
         data, mime = IPreviewable(self.context).getSubObject('preview.html')
         return data.decode('utf-8')
+
+    def previewLoadable(self):
+        """ Shall we load the preview whe loading the page ? """
+        config = self._getConfig()
+        if not config:
+            return True 
+        collapsed = self.collapsed()
+        # if we set collapsed to False in the conf, we always load the preview
+        if not collapsed:
+            return True
+        if collapsed and config.rf_load_preview_collapsed:
+            return True         
+
         

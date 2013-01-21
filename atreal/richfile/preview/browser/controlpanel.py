@@ -22,17 +22,32 @@ class IRichFilePreviewSchema(Interface):
         title=_(u"label_rf_preview_collapsed",
                 default=u"Display collapsed ?"),
         description=_(u"help_rf_preview_collapsed",
-                      default=u"Do you want the plugin's display to be collapsed ?"
+                      default=u"Do you want the plugin's display to be "
+                      u"collapsed ?"
                      ),
         default=False)
+
+    rf_load_preview_collapsed = Bool(
+        title=_(u"label_rf_load_preview_collapsed",
+                default=u"Load preview when collapsed ?"),
+        description=_(u"help_rf_load_preview_collapsed",
+                      default=u"Do you want to load the preview when the "
+                      u"plugin's display is collapsed ? Unchecking this will "
+                      u"accelerate the total loading time of your page (main "
+                      u"page + preview iframe). This option has not effect if "
+                      u"the above option is not checked."
+                     ),
+        default=False)    
 
     
 class RichFilePreviewControlPanelAdapter(SchemaAdapterBase):
     adapts(IPloneSiteRoot)
     implements(IRichFilePreviewSchema)
 
-    rf_preview_collapsed = ProxyFieldProperty(IRichFilePreviewSchema['rf_preview_collapsed'])
-
+    rf_preview_collapsed = \
+        ProxyFieldProperty(IRichFilePreviewSchema['rf_preview_collapsed'])
+    rf_load_preview_collapsed = \
+        ProxyFieldProperty(IRichFilePreviewSchema['rf_load_preview_collapsed'])
 
     
 class RichFilePreviewControlPanel(RFControlPanel):

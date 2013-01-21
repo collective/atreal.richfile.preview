@@ -79,6 +79,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        for="atreal.richfile.preview.interfaces.IPreview"
+        name="loadViewletPreview"
+        attribute="loadPreview"
+        class=".views.RFPreviewView"
+        permission="zope2.View"
+        />
+
     <!-- Traverse -->
     <adapter
         factory=".views.RFPreviewTraverse"

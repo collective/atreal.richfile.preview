@@ -1,6 +1,8 @@
 <dl class="richfile portlet"
+    tal:define="loadable view/previewLoadable"
     tal:condition="view/available"
-    tal:attributes="id view/plugin_id"
+    tal:attributes="id view/plugin_id;
+        class python:'richfile portlet ' + (loadable and 'kssattr-iframeLoaded-loaded' or 'kssattr-iframeLoaded-unloaded')"
     i18n:domain="atreal.richfile.preview">
     
     <dt tal:attributes="id string:${view/plugin_id}Header" class="rfheader portletHeader">
@@ -20,13 +22,9 @@
                         class string:rfbody portletItem odd ${view/collapsed}">
         
         <!--Your specific code here-->        
-	
-	<div>
-	    <IFRAME src="http://perso.wanadoo.fr/bernard.quevillier/toposnew/fondex03.htm"
-		    tal:attributes="src string:${here/absolute_url}/rfpreview"
-		    width="100%" height="400" scrolling="auto" frameborder="1"> </IFRAME>
-	</div>
-	
+    	    <iframe src="#"
+    		    tal:attributes="src python:loadable and here.absolute_url()+'/rfpreview' or '';"
+    		    width="100%" height="400" scrolling="auto" frameborder="1"> </iframe>
         <!--End of specific code-->
 	
     </dd>

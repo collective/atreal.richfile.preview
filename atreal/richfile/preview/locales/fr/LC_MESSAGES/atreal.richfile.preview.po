@@ -29,7 +29,7 @@ msgstr "Plugin de prévisualisation activé."
 msgid "Preview un-activated."
 msgstr "Plugin de prévisualisation désactivé."
 
-#: ./profiles/default/controlpanel.xml
+#: ./profiles/default/controlpanel.xml:
 msgid "RichFilePreview"
 msgstr ""
 
@@ -65,3 +65,12 @@ msgstr "Affichage rétracté ?"
 msgid "title_required"
 msgstr "Requis"
 
+#. Default: ""
+#: ./browser/controlpanel.py:24
+msgid "help_rf_load_preview_collapsed"
+msgstr "Cochez la case si vous souhaitez que la prévisualisation soit chargée dans la page même quand l'affichage est contracté. Laissez cette case décochée améliore le temps de chargement total de la page. Cette option n'a aucune incidence si l'option précédente n'est pas activée."
+
+#. Default: "Load preview when collapsed ?"
+#: ./browser/controlpanel.py:22
+msgid "label_rf_load_preview_collapsed"
+msgstr "Prévisualisation chargée quand l'affichage est contracté ?"

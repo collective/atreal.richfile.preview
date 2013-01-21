@@ -16,9 +16,33 @@
     unactivateViewletPreview-viewlet:         kssAttr(viewlet, True);
 }
 
-
 #preview a.viewlet-refresh:click {
     evt-click-preventdefault:               true;
     action-server:                          refreshViewletPreview;
     refreshViewletPreview-viewlet:            kssAttr(viewlet, True);
 }
+
+#preview a.action.expand:click
+{
+    evt-click-preventdefault:               true;
+    action-client:                          toggleClass htmlid(kssAttr(toggleOnExpand, True)) alias(toggleAction);
+    toggleAction-value:                     rfcollapsed;
+    action-client:                          toggleClass htmlid(kssAttr(bodyId, True)) alias(toggleBody);
+    toggleBody-value:                       rfcollapsed;
+    action-client:                          toggleClass;
+    toggleClass-value:                      rfcollapsed;
+    action-server:                          loadViewletPreview;
+    loadViewletPreview-iframeLoaded:        kssAttr(iframeLoaded, True);
+}
+
+/*#preview a.action.expand:click
+{
+    evt-click-preventdefault:               true;
+    action-server:                          loadViewletPreview;
+    action-client:                          toggleClass htmlid(kssAttr(toggleOnExpand, True)) alias(toggleAction);
+    toggleAction-value:                     rfcollapsed;
+    action-client:                          toggleClass htmlid(kssAttr(bodyId, True)) alias(toggleBody);
+    toggleBody-value:                       rfcollapsed;
+    action-client:                          toggleClass;
+    toggleClass-value:                      rfcollapsed;
+}*/

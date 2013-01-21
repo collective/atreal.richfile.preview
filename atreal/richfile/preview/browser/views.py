@@ -1,10 +1,12 @@
 from zope.interface import implements
 
+from kss.core import kssaction
 from atreal.richfile.preview.interfaces import IPreviewable
 
 from atreal.richfile.qualifier.common import RFView, RFTraverse
 from atreal.richfile.qualifier.interfaces import IRFView
 from atreal.richfile.preview import RichFilePreviewMessageFactory as _
+
 
 class RFPreviewView(RFView):
     
@@ -21,6 +23,24 @@ class RFPreviewView(RFView):
         """
         data, mime = IPreviewable(self.context).getSubObject('preview.html')
         return data.decode('utf-8')
+
+    @kssaction
+    def loadPreview(self, iframeLoaded):
+        """ User-called, to refresh the viewlet """
+        if iframeLoaded == 'loaded':
+            return
+        ksscore = self.getCommandSet('core')
+        # selector = ksscore.getCssSelector("#previewBody iframe")
+        ksscore.setAttribute(ksscore.getCssSelector("#previewBody iframe"), 
+            'src', 
+            "%s/rfpreview" % self.context.absolute_url()
+        )
+        ksscore.addClass(ksscore.getCssSelector("#preview"),
+            "kssattr-iframeLoaded-loaded"
+        )
+        ksscore.removeClass(ksscore.getCssSelector("#preview"), 
+            "kssattr-iframeLoaded-unloaded"
+        )
 
 
 class RFPreviewTraverse(RFTraverse):
